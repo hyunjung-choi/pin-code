@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PinCode"
         tools:targetApi="31">
         <activity
+            android:name=".PinCodeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
