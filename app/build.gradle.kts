@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.hyunjung.pincode"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.hyunjung.pincode"
