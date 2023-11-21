@@ -16,6 +16,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openShuffleKeypad() {
-
+        startActivity(Intent(this, PinCodeActivity::class.java))
     }
 }

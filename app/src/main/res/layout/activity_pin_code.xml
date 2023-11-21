@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.hyunjung.pincode.PinCodeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,13 +33,62 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="red"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pin_code_title">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:code_index="@{0}"
+                app:code_text="@{vm.passwordLiveData}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:code_index="@{1}"
+                app:code_text="@{vm.passwordLiveData}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:code_index="@{2}"
+                app:code_text="@{vm.passwordLiveData}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:code_index="@{3}"
+                app:code_text="@{vm.passwordLiveData}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:code_index="@{4}"
+                app:code_text="@{vm.passwordLiveData}" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:code_index="@{5}"
+                app:code_text="@{vm.passwordLiveData}" />
+
         </LinearLayout>
+
+        <com.hyunjung.pincode.widget.ShuffleNumberKeyboard
+            android:id="@+id/shuffle_number_keyboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
