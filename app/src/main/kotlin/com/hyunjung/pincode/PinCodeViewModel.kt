@@ -52,6 +52,21 @@ class PinCodeViewModel : ViewModel() {
             return false
         }
 
+        var count = 0
+        password.reduce { before, after ->
+            if (after - before == 1) {
+                count++
+                if (count >= 2) {
+                    _messageLiveData.value = "연속된 3자리 숫자는 사용하실 수 없습니다."
+                    reset()
+                    return false
+                }
+            } else {
+                count = 0
+            }
+            after
+        }
+
         return true
     }
 }
