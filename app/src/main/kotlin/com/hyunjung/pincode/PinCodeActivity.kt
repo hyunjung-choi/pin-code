@@ -2,6 +2,7 @@ package com.hyunjung.pincode
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.hyunjung.pincode.databinding.ActivityPinCodeBinding
 import com.hyunjung.pincode.widget.ShuffleNumberKeyboard
@@ -18,6 +19,10 @@ class PinCodeActivity : AppCompatActivity(), ShuffleNumberKeyboard.KeypadListene
         binding.vm = viewModel
         binding.lifecycleOwner = this
         binding.shuffleNumberKeyboard.setKeyPadListener(this)
+
+        viewModel.messageLiveData.observe(this) {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onClickNum(num: String) {
